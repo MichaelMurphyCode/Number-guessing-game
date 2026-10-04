@@ -11,20 +11,30 @@ public class Main {
         int points = 0;
         int target = random.nextInt(goal) + 1;
 
-        System.out.println("== Number guessing game ==");
-        System.out.println("Points: " + points);
-        System.out.print("Enter any number: ");
-        int randomNumber = Integer.parseInt(scanner.nextLine());
+        while (true){
+            System.out.println("== Number guessing game ==");
+            System.out.println("Points: " + points);
+            System.out.print("Enter any number: ");
+            int randomNumber = Integer.parseInt(scanner.nextLine());
 
-        if (randomNumber == target){
-            System.out.println("You guessed correctly!");
-            points += 1;
-        } else if (randomNumber < target){
-            System.out.println("Warmer! the number was : " + target);
-        } else {
-            System.out.println("Hotter! the number was : " + target);
+            if (randomNumber == target){
+                System.out.println("You guessed correctly!");
+                points += 1;
+            } else if (randomNumber < target){
+                System.out.println("Warmer! the number was : " + target);
+            } else {
+                System.out.println("Hotter! the number was : " + target);
+            }
+            System.out.println("Points earned: " + points);
+
+            System.out.print("Do you like tryagain? y/n: ");
+            String yN = scanner.nextLine();
+            if (yN.equalsIgnoreCase("y")){
+                target = random.nextInt(goal) + 1;
+                continue;
+            } else if (yN.equalsIgnoreCase("n")){
+                break;
+            }
         }
-        System.out.println("Points earned: " + points);
-        
     }
 }

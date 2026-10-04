@@ -12,4 +12,6 @@ Just point system does nothing
 
 While loop let's you keep playing...
 
-10/3/2026
+**UPDATED**
+
+Added while loop allows you play again
